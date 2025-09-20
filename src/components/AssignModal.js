@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import PropTypes from 'prop-types';
 
 export default function AssignModal({ complaint, isOpen, onClose, onAssign }) {
   const [employee, setEmployee] = useState("");
   const [days, setDays] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     if (employee && days) {
       onAssign(complaint.id, employee, days);
@@ -12,7 +13,7 @@ export default function AssignModal({ complaint, isOpen, onClose, onAssign }) {
       setDays("");
       onClose();
     }
-  };
+  }, [employee, days, complaint?.id, onAssign, onClose]);
 
   if (!isOpen) return null;
 
@@ -67,3 +68,12 @@ export default function AssignModal({ complaint, isOpen, onClose, onAssign }) {
     </div>
   );
 }
+
+AssignModal.propTypes = {
+  complaint: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }),
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onAssign: PropTypes.func.isRequired,
+};

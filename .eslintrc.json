@@ -1,0 +1,16 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "react/prop-types": "warn",
+    "react/no-unescaped-entities": "warn"
+  }
+}

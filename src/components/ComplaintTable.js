@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export default function ComplaintTable({ complaints }) {
   return (
@@ -45,3 +46,15 @@ export default function ComplaintTable({ complaints }) {
     </div>
   );
 }
+
+ComplaintTable.propTypes = {
+  complaints: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      citizen: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      upvotes: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

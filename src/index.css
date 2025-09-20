@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 /* Custom styles */
 body {
@@ -15,23 +15,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-/* Custom component styles */
-.sidebar-link {
-  @apply block px-4 py-2 text-white hover:bg-blue-600 rounded-lg transition-colors duration-200;
-}
-
-.btn-primary {
-  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200;
-}
-
-.btn-secondary {
-  @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200;
-}
-
-.card {
-  @apply bg-white shadow-md rounded-lg p-6;
 }
 
 /* Animation classes */
