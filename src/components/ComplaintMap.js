@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import "../utils/leafletConfig";
 
 const complaints = [
   { id: 1, category: "Garbage", lat: 21.2514, lng: 81.6296 },

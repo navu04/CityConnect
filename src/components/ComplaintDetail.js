@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function ComplaintDetail({ complaint }) {
   if (!complaint) return null;
 
@@ -45,3 +47,15 @@ export default function ComplaintDetail({ complaint }) {
     </div>
   );
 }
+
+ComplaintDetail.propTypes = {
+  complaint: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    citizen: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    upvotes: PropTypes.number.isRequired,
+    dateSubmitted: PropTypes.string,
+    description: PropTypes.string,
+  }),
+};
